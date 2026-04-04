@@ -9,6 +9,12 @@ cask "talks-reducer" do
 
   app "talks-reducer.app"
 
+  caveats <<~EOS
+    #{token} is not signed with an Apple Developer ID.
+    macOS may show a warning on first launch.
+    To allow it, go to System Settings > Privacy & Security and click "Open Anyway".
+  EOS
+
   zap trash: [
     "~/Library/Preferences/talks-reducer",
   ]
